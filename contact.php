@@ -424,10 +424,10 @@ li a {
                     <input type="text" id="name" name="name" required placeholder="Enter your name">
 
                     <label for="phone">Your Phone Number</label>
-                    <input type="text" id="phone" name="phone" required placeholder="Enter your email">
+                    <input type="text" id="phone" name="phone" required placeholder="Enter your phonenumber">
 
                     <label for="websitename">Your Website Name</label>
-                    <input type="text" id="websitename" name="websitename" required placeholder="Enter your email">
+                    <input type="text" id="websitename" name="websitename" required placeholder="Enter your websitename">
 
                     <label for="message">Your Message</label>
                     <textarea id="message" name="message" required placeholder="Enter your message"></textarea>

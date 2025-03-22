@@ -26,13 +26,13 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($page - 1) * $limit;
 
 // Count total rows
-$totalQuery = "SELECT COUNT(*) AS total FROM website";
+$totalQuery = "SELECT COUNT(*) AS total FROM form_submissions";
 $totalResult = $conn->query($totalQuery);
 $totalRows = $totalResult->fetch_assoc()['total'];
 $totalPages = ceil($totalRows / $limit);
 
 // Fetch data with pagination
-$sql = "SELECT id, image, title, description, view, sample FROM website ORDER BY id DESC LIMIT $limit OFFSET $offset";
+$sql = "SELECT id, name, phone, websitename, message, created_at FROM form_submissions ORDER BY id DESC LIMIT $limit OFFSET $offset";
 $result = $conn->query($sql);
 ?>
 
@@ -57,7 +57,7 @@ $result = $conn->query($sql);
                     <a class="nav-link" href="order.php">Order Requests</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="our.php">create OurSite</a>
+                    <a class="nav-link" href="our.php">create OurSite </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="mywebsite.php">mywebsites</a>
@@ -84,24 +84,22 @@ $result = $conn->query($sql);
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Image</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>View</th>
-                <th>Sample Number</th>
-                <th>Action</th>
+                <th>Name</th>
+                <th>phone number</th>
+                <th>website name</th>
+                <th>message</th>
+                <th>created_at</th>
             </tr>
         </thead>
         <tbody id="tableBody">
             <?php while ($row = $result->fetch_assoc()): ?>
                 <tr id="row-<?php echo $row['id']; ?>">
                     <td><?php echo $row['id']; ?></td>
-                    <td><img src="<?php echo $row['image']; ?>" width="50"></td>
-                    <td><?php echo $row['title']; ?></td>
-                    <td><?php echo $row['description']; ?></td>
-                    <td><?php echo $row['view']; ?></td>
-                    <td>sample <?php echo $row['sample']; ?></td>
-                    <td><button class="btn btn-danger delete-btn" data-id="<?php echo $row['id']; ?>">Delete</button></td>
+                    <td><?php echo $row['name']; ?></td>
+                    <td><?php echo $row['phone']; ?></td>
+                    <td><?php echo $row['websitename']; ?></td>
+                    <td><?php echo $row['message']; ?></td>
+                    <td><?php echo $row['created_at']; ?></td>
                 </tr>
             <?php endwhile; ?>
         </tbody>
@@ -133,23 +131,23 @@ $result = $conn->query($sql);
             });
         });
 
-        $(".delete-btn").on("click", function() {
-            var id = $(this).data("id");
-            if (confirm("Are you sure you want to delete this entry?")) {
-                $.ajax({
-                    url: "delete_website.php",
-                    type: "POST",
-                    data: { id: id },
-                    success: function(response) {
-                        if (response == "success") {
-                            $("#row-" + id).remove();
-                        } else {
-                            alert("Failed to delete the record.");
-                        }
-                    }
-                });
-            }
-        });
+        // $(".delete-btn").on("click", function() {
+        //     var id = $(this).data("id");
+        //     if (confirm("Are you sure you want to delete this entry?")) {
+        //         $.ajax({
+        //             url: "delete_website.php",
+        //             type: "POST",
+        //             data: { id: id },
+        //             success: function(response) {
+        //                 if (response == "success") {
+        //                     $("#row-" + id).remove();
+        //                 } else {
+        //                     alert("Failed to delete the record.");
+        //                 }
+        //             }
+        //         });
+        //     }
+        // });
     });
 </script>
 </body>

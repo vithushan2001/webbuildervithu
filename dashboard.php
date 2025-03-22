@@ -60,10 +60,13 @@ $result = $conn->query($sql);
                     <a class="nav-link" href="order.php">Order Requests</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="our.php">Our Site Sample</a>
+                    <a class="nav-link" href="our.php">create OurSite</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="mywebsite.php">My Websites</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contactfrom.php">contactfrom</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
