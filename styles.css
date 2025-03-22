@@ -1,0 +1,175 @@
+body, html {
+    overflow-x: hidden;
+}
+
+
+       
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #333; */
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+}
+
+/* li a:hover {
+  background-color: #111;
+} */
+
+         @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animated-heading {
+        animation: fadeInUp 1s ease-out;
+    }
+    .animated-content {
+        animation: fadeInUp 1s ease-out;
+        animation-delay: 0.1s;
+
+    }
+
+   .picture w3-display-container{
+    padding: auto;
+   }
+
+/* Modal Background */
+.modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #1a1a1a; /* Dark background */
+        margin: 10% auto; /* 10% from the top and centered */
+        padding: 20px;
+        border: 2px solid rgb(25 135 84); /* Orange border */
+        border-radius: 10px;
+        width: 80%; /* Could be more or less, depending on screen size */
+        max-width: 500px;
+        color: #fff; /* White text */
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Close Button */
+    .close {
+        color:rgb(25 135 84); /* Orange color */
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover {
+        color:rgb(25 135 84); /* Lighter orange on hover */
+    }
+
+    /* Form Styling */
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-top: 10px;
+        font-weight: bold;
+        color: rgb(25 135 84); /* Orange color */
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select {
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid rgb(25 135 84); /* Orange border */
+        border-radius: 5px;
+        background-color: #333; /* Dark input background */
+        color: #fff; /* White text */
+    }
+
+    input[type="file"] {
+        margin-top: 5px;
+    }
+
+    button[type="submit"] {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: rgb(25 135 84); /* Orange background */
+        color: #fff; /* White text */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button[type="submit"]:hover {
+        background-color: rgb(25 135 84); /* Lighter orange on hover */
+    }
+  
+    /* Mobile View Adjustments */
+    @media (max-width: 768px) {
+        .bg-success {
+            grid-template-columns: 1fr !important; /* Stack elements vertically */
+            text-align: center; /* Center-align text */
+            padding: 1rem; /* Add padding for better spacing */
+        }
+
+        .img-fluid{
+            margin-right: 200px;
+        }
+
+        .animated-heading {
+            font-size: 2rem !important; /* Reduce heading font size */
+            margin-bottom: 0.5rem !important; /* Reduce margin */
+        }
+
+        .d-flex {
+            flex-direction: column; /* Stack button and text vertically */
+            align-items:center; 
+            margin-left : 100px !important; 
+            gap: 0.5rem !important; /* Reduce gap between elements */
+        }
+
+        .btn {
+            /* display: none; */
+            font-size: 1rem !important; /* Reduce button font size */
+            padding: 6px 12px !important; /* Adjust button padding */
+        }
+
+        .offerDate {
+            font-size: 1rem !important; /* Reduce offer text font size */
+            text-align: center; /* Center-align text */
+        }
+
+        .bg-success img {
+            max-width: 80% !important; /* Reduce image size */
+            margin-top: 1rem; /* Add spacing above the image */
+        }
+    }
+    
